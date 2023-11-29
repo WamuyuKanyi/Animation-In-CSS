@@ -1,0 +1,57 @@
+
+
+/* Transition 0 = 100%
+ANIMATION 0% 1%..100%  */
+
+div{
+  width: 200px;
+  height: 100px;
+  margin: 10px;
+  color: white;
+}
+
+.transition{
+  background: greenyellow;
+  transition: all 2s linear;
+}
+
+
+  .transition:hover {
+    background: purple;
+    transform: translateX(100px);
+
+  }
+
+  .animation {
+    background: blue;
+    /* animation-name: move;
+    animation-duration: 10s; */
+    /* the animation will play two times because we have the count of two */
+    /* animation-iteration-count: 2 ; */
+    /* the short hand to the above code is as below */
+    animation: move 5s infinite;
+  }
+
+  /* Specify when the style change will happen in percent, or with the keywords "from" and "to", which is the same as 0% and 100%. 0% is the beginning of the animation, 100% is when the animation is complete.
+
+Tip: For best browser support, you should always define both the 0% and the 100% selectors.
+
+Note: Use the animation properties to control the appearance of the animation, and also to bind the animation to selectors. */
+  @keyframes move{
+    0%{
+      transform: translateX(20px) ;
+    }
+    50%{
+      /* the percentage and animation duration correlate ie if we wrote 50% of 20sec it will be 10seconds*/
+      transform:translateX(100px);
+      background: red;
+    }
+    75%{
+      transform:translateX(-200px);
+      background: yellow;
+    } 
+    100%{
+      transform:translateX(20px);
+      background: green;
+    }
+  }
